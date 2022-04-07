@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/style.css" />
+        <script src="https://kit.fontawesome.com/cde30f483a.js" crossorigin="anonymous"></script>
+        <title>Jogo da memória</title>
+    </head>
+    <body>
+        <div id="game-container">
+            <div id="game-title">
+                <h1>JOGO DA MEMÓRIA</h1>
+            </div>
+
+            <div id="game-records">
+                <h1>SEUS RECORDES</h1>
+                <div id="game-record-times"></div>
+            </div>
+
+            <div id="game-content" class="">
+                <div id="game-controls">
+                    <div id="game-start">
+                        <h1>APERTE PARA COMEÇAR</h1>
+                        <button id="start" onclick="start()">Jogar</button>
+                    </div>
+                </div>
+
+                <div id="game-board"></div>
+            </div>
+
+            <div id="game-counter">
+                <h1>SEU TEMPO:</h1>
+                <div id="game-counter-info">00:00:00</div>
+            </div>
+            <div id="game-over">
+                <div>Parabéns, você concluiu o desafio!</div>
+                <p id="current-record">O seu tempo foi:</p>
+                <button id="restart" onclick="restart()">Jogue novamente</button>
+            </div>
+        </div>
+
+        <a href="https://github.com/thgomes1"
+            ><i class="fa-brands fa-github"></i> Desenvolvido por Thiago Gomes</a
+        >
+
+        <script src="./js/game.js"></script>
+        <script src="./js/script.js"></script>
+    </body>
+</html>

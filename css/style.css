@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #212324;
+}
+html {
+    font-size: 62.5%;
+}
+a {
+    text-decoration: none;
+}
+body > a {
+    position: absolute;
+    bottom: 1.5%;
+    color: white;
+    margin-top: 25px;
+    border: 2px solid rgb(0, 153, 255);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    transition: 500ms;
+}
+body > a:hover {
+    background-color: rgba(0, 153, 255, 0.877);
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+
+    background-color: rgb(3, 42, 73);
+    box-shadow: 2px 2px 5px black;
+}
+
+#game-title {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+    background-color: #05b8ff;
+    padding: 12px;
+    box-shadow: 2px 2px 5px black;
+}
+
+#game-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    padding: 5rem;
+    transition: 1s;
+}
+
+#game-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 2.5rem;
+    padding: 0px 5rem;
+    width: 100%;
+    height: 100%;
+    transition: 500ms;
+}
+
+#game-start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.9rem;
+    color: white;
+    transition: 500ms;
+}
+#game-start #start {
+    width: 200px;
+    padding: 20px;
+    font-size: 20px;
+    border: 0;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(0, 183, 255);
+    margin-top: 15px;
+    transition: 500ms;
+}
+#game-start #start:hover {
+    cursor: pointer;
+    background-color: rgb(6, 141, 194);
+}
+
+#game-over {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-transform: uppercase;
+    color: white;
+    filter: none;
+    z-index: 2;
+    font-size: 2.2rem;
+    position: absolute;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background-color: rgb(6, 92, 163);
+    box-shadow: 2px 2px 5px black;
+    opacity: 0%;
+    transition: 500ms;
+}
+#game-over #restart {
+    padding: 7px 20px;
+    font-size: 2rem;
+    border: 0;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(0, 183, 255);
+    margin-top: 15px;
+    transition: 500ms;
+}
+#game-over #restart:hover {
+    cursor: pointer;
+    background-color: rgb(6, 141, 194);
+}
+#game-over p {
+    font-size: 1.5rem;
+}
+
+#game-board {
+    display: grid;
+
+    grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    transition: 500ms;
+}
+
+.card {
+    width: 120px;
+    height: 129px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+.card_front,
+.card_back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.459);
+    backface-visibility: hidden;
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.card_front {
+    transform: rotateY(180deg);
+    background-color: #166599;
+}
+
+.card_back {
+    color: #101c2c;
+    background-color: #05b8ff;
+    font-size: 35px;
+}
+
+#game-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #166599;
+}
+#game-counter h1 {
+    width: 100%;
+    background-color: #05b8ff;
+    padding: 5px 25px;
+}
+#game-counter-info {
+    font-weight: 500;
+    font-size: 2rem;
+    color: white;
+    padding: 5px 10px;
+}
+
+#game-records {
+    position: absolute;
+    left: 2%;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #166599;
+}
+#game-records h1 {
+    background-color: #05b8ff;
+    padding: 5px 10px;
+}
+
+#game-record-times {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.game-record {
+    padding: 5px 10px;
+}
