@@ -17,19 +17,22 @@
             <div id="game-records">
                 <h1>SEUS RECORDES</h1>
                 <div id="game-record-times"></div>
+                <button id="clean-records-btn" onclick="cleanRecords()">LIMPAR</button>
             </div>
 
             <div id="game-content" class="">
                 <div id="game-controls">
-                    <div id="game-start">
+                    <div id="game-start" class="control-box-cfg">
                         <h1>CLIQUE PARA COMEÇAR</h1>
-                        <button id="start" onclick="start()">Jogar</button>
+                        <button id="start" class="control-btn-cfg" onclick="start()">Jogar</button>
                     </div>
 
-                    <div id="game-over">
+                    <div id="game-over" class="control-box-cfg">
                         <div>Parabéns, você concluiu o desafio!</div>
                         <p id="current-record">O seu tempo foi:</p>
-                        <button id="restart" onclick="restart()">JOGAR NOVAMENTE</button>
+                        <button id="restart" class="control-btn-cfg" onclick="restart()">
+                            JOGAR NOVAMENTE
+                        </button>
                     </div>
                 </div>
 

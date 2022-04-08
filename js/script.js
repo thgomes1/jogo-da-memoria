@@ -23,6 +23,7 @@ onload = function () {
     gameRecordTimes.innerHTML = allRecordTimes;
 
     gameBoard.classList.add("blur");
+    gameControls.classList.add("stretched");
 };
 
 startGame();
@@ -89,7 +90,8 @@ function flipCard() {
                     saveRecordData(currentRecordData);
 
                     gameBoard.classList.add("blur");
-                    gameControls.style.display = "flex";
+                    gameControls.classList.add("stretched");
+                    gameOverLayer.style.display = "flex";
                     gameOverLayer.style.opacity = "100%";
 
                     stopCounter();
@@ -114,9 +116,10 @@ function start() {
     let cards = document.querySelectorAll(".card");
 
     gameBoard.classList.remove("blur");
+    gameControls.classList.remove("stretched");
     gameStartLayer.style.opacity = "0%";
     setTimeout(() => {
-        gameControls.style.display = "none";
+        gameStartLayer.style.display = "none";
     }, 500);
 
     cards.forEach((card) => {
@@ -135,8 +138,9 @@ function start() {
 }
 function restart() {
     gameBoard.classList.remove("blur");
+    gameControls.classList.remove("stretched");
     gameOverLayer.style.opacity = "0%";
-    gameControls.style.display = "none";
+    gameOverLayer.style.display = "none";
 
     game.clearCards();
     startGame();
@@ -172,7 +176,10 @@ function stopCounter() {
 function saveRecordData(currentRecord) {
     gameRecordTimes.innerHTML += `<h2 class="game-record">${currentRecord}</h2>`;
 
-    console.log(currentRecord);
+    localStorage.setItem("gameRecordTimes", gameRecordTimes.innerHTML);
+}
+function cleanRecords() {
+    gameRecordTimes.innerHTML = "";
 
     localStorage.setItem("gameRecordTimes", gameRecordTimes.innerHTML);
 }
