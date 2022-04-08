@@ -143,7 +143,7 @@ body > a:hover {
 
 .card {
     width: 120px;
-    height: 129px;
+    height: 120px;
     position: relative;
     cursor: pointer;
     transform-style: preserve-3d;
@@ -235,4 +235,23 @@ body > a:hover {
 }
 .game-record {
     padding: 5px 10px;
+}
+
+@media (max-height: 780px) {
+    .card {
+        width: 110px;
+        height: 110px;
+    }
+}
+@media (max-height: 720px) {
+    .card {
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (max-height: 660px) {
+    .card {
+        width: 90px;
+        height: 90px;
+    }
 }
