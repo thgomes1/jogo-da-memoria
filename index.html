@@ -22,8 +22,14 @@
             <div id="game-content" class="">
                 <div id="game-controls">
                     <div id="game-start">
-                        <h1>APERTE PARA COMEÇAR</h1>
+                        <h1>CLIQUE PARA COMEÇAR</h1>
                         <button id="start" onclick="start()">Jogar</button>
+                    </div>
+
+                    <div id="game-over">
+                        <div>Parabéns, você concluiu o desafio!</div>
+                        <p id="current-record">O seu tempo foi:</p>
+                        <button id="restart" onclick="restart()">JOGAR NOVAMENTE</button>
                     </div>
                 </div>
 
@@ -31,13 +37,8 @@
             </div>
 
             <div id="game-counter">
-                <h1>SEU TEMPO:</h1>
+                <h1>TEMPORIZADOR</h1>
                 <div id="game-counter-info">00:00:00</div>
-            </div>
-            <div id="game-over">
-                <div>Parabéns, você concluiu o desafio!</div>
-                <p id="current-record">O seu tempo foi:</p>
-                <button id="restart" onclick="restart()">Jogue novamente</button>
             </div>
         </div>
 

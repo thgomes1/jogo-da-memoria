@@ -1,5 +1,10 @@
 let gameCounterInfo = document.getElementById("game-counter-info");
 let gameRecordTimes = document.getElementById("game-record-times");
+let gameBoard = document.getElementById("game-board");
+let gameControls = document.getElementById("game-controls");
+let gameOverLayer = document.getElementById("game-over");
+let gameStartLayer = document.getElementById("game-start");
+
 var tH = 0;
 var tM = 0;
 var tS = 0;
@@ -16,6 +21,8 @@ onload = function () {
     console.log(allRecordTimes);
 
     gameRecordTimes.innerHTML = allRecordTimes;
+
+    gameBoard.classList.add("blur");
 };
 
 startGame();
@@ -72,8 +79,6 @@ function flipCard() {
             if (game.checkMatch()) {
                 game.clearCards();
                 if (game.checkGameOver()) {
-                    let gameOverLayer = document.getElementById("game-over");
-                    let gameContent = document.getElementById("game-content");
                     let currentRecord = document.getElementById("current-record");
 
                     localStorage.setItem("currentRecord", gameCounterInfo.innerHTML);
@@ -83,8 +88,8 @@ function flipCard() {
 
                     saveRecordData(currentRecordData);
 
-                    gameContent.classList.add("blur");
-                    gameOverLayer.style.display = "flex";
+                    gameBoard.classList.add("blur");
+                    gameControls.style.display = "flex";
                     gameOverLayer.style.opacity = "100%";
 
                     stopCounter();
@@ -107,9 +112,9 @@ function flipCard() {
 
 function start() {
     let cards = document.querySelectorAll(".card");
-    let gameControls = document.getElementById("game-controls");
 
-    gameControls.style.opacity = "0%";
+    gameBoard.classList.remove("blur");
+    gameStartLayer.style.opacity = "0%";
     setTimeout(() => {
         gameControls.style.display = "none";
     }, 500);
@@ -129,12 +134,9 @@ function start() {
     setTimeout(startCounter, 1500);
 }
 function restart() {
-    let gameOverLayer = document.getElementById("game-over");
-    let gameContent = document.getElementById("game-content");
-
-    gameContent.classList.remove("blur");
+    gameBoard.classList.remove("blur");
     gameOverLayer.style.opacity = "0%";
-    gameOverLayer.style.display = "none";
+    gameControls.style.display = "none";
 
     game.clearCards();
     startGame();
